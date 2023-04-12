@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { ThemeContext } from './Contexts';
+import Form from './components/Form';
+import Button from './components/Button';
 import './App.css';
 
-function App() {
+export default function App() {
+  const [theme, setTheme] = useState('light');
+
+  function changeTheme() {
+    switch (theme) {
+      case 'light':
+        setTheme('dark');
+        return;
+
+      case 'dark':
+        setTheme('dim');
+        return;
+
+      default:
+        setTheme('light');
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeContext.Provider value={theme}>
+        <Form />
+      </ThemeContext.Provider>
+      <Button onClick={changeTheme}>Toggle Theme</Button>
+    </>
   );
 }
-
-export default App;
