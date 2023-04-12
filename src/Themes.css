@@ -1,0 +1,32 @@
+.panel-light {
+  background-color: #fff;
+  color: #000;
+}
+
+.panel-dark {
+  background-color: #202020;
+  color: #fff;
+}
+
+.panel-dim {
+  background-color: #23272f;
+  color: #fff;
+}
+
+.button-light {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.button-dark {
+  background-color: #23272f;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.button-dim {
+  background-color: #222222;
+  color: #fff;
+  border: 1px solid #fff;
+}

@@ -1,33 +1,29 @@
 import { useState } from 'react';
-import { ThemeContext } from './Contexts';
-import Form from './components/Form';
+import { ThemeContext } from './Context';
+import Panel from './components/Panel';
 import Button from './components/Button';
 import './App.css';
+import './Themes.css';
 
 export default function App() {
   const [theme, setTheme] = useState('light');
 
-  function changeTheme() {
-    switch (theme) {
-      case 'light':
-        setTheme('dark');
-        return;
-
-      case 'dark':
-        setTheme('dim');
-        return;
-
-      default:
-        setTheme('light');
-    }
-  }
-
   return (
     <>
       <ThemeContext.Provider value={theme}>
-        <Form />
+        <Panel title="Welcome" />
       </ThemeContext.Provider>
-      <Button onClick={changeTheme}>Toggle Theme</Button>
+      <Button
+        onClick={() => {
+          theme === 'light'
+            ? setTheme('dark')
+            : theme === 'dark'
+            ? setTheme('dim')
+            : setTheme('light');
+        }}
+      >
+        Toggle Theme
+      </Button>
     </>
   );
 }

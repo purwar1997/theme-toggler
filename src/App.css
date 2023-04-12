@@ -6,16 +6,17 @@
 }
 
 #root {
-  margin-top: 60px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
 }
 
-section {
+.panel {
   padding: 50px 150px;
   border: 1px solid #000;
+  border-radius: 8px;
   text-align: center;
 }
 
@@ -31,37 +32,4 @@ button {
   font-size: 17px;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.panel-light {
-  background-color: #fff;
-  color: #000;
-}
-
-.panel-dark {
-  background-color: #111111;
-  color: #fff;
-}
-
-.panel-dim {
-  background-color: #23272f;
-  color: #fff;
-}
-
-.button-light {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
-}
-
-.button-dark {
-  background-color: #23272f;
-  color: #fff;
-  border: 1px solid #fff;
-}
-
-.button-dim {
-  background-color: #222222;
-  color: #fff;
-  border: 1px solid #fff;
 }
